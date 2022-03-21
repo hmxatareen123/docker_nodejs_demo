@@ -25,10 +25,10 @@ jobs:
             USER_NAME : ${{ secrets.USER_NAME  }}
             
         run: |
-          chmod -R 700 /home/ubuntu/
+          
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           
-           
-            cd /home/ubuntu/ &&
-            mkdir testapp
+           chmod -R 700 /home/ubuntu/
+           cd /home/ubuntu/ &&
+           mkdir testapp
           '
